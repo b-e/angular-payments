@@ -373,6 +373,8 @@ angular.module('angularPayments')
             if (mon.length === 1 && (mon !== '0' && mon !== '1')) {
                 mon = "0" + mon;
                 sep = ' / ';
+            } else if (mon.length == 2 && sep.length == 0) {
+                sep = ' / ';
             }
             return mon + sep + year;
         };
