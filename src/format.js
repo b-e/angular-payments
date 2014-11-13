@@ -364,6 +364,7 @@ angular.module('angularPayments')
             if (!parts) {
                 return '';
             }
+            console.log(parts);
             mon = parts[1] || '';
             sep = parts[2] || '';
             year = parts[3] || '';
@@ -375,6 +376,10 @@ angular.module('angularPayments')
                 sep = ' / ';
             } else if (mon.length == 2 && sep.length == 0) {
                 sep = ' / ';
+            } else if (mon.length== 2 && sep == ' /') {
+                mon = mon.substring(0, 1);
+                year = '';
+                sep = '';
             }
             return mon + sep + year;
         };
